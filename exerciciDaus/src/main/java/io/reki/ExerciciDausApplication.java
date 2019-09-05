@@ -37,7 +37,7 @@ public class ExerciciDausApplication {
 					do {
 					ThrowDices tirada = new ThrowDices(playerId);
 					System.out.println("Vols tornar a tirar? S/N");
-					resposta = lee.nextLine().toUpperCase();
+					resposta = lee.next().toUpperCase();
 					}while(resposta == "S");
 					break;
 				}

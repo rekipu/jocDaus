@@ -1,22 +1,16 @@
 package io.reki;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table
 public class ThrowDices {
 
+	private static int id=1;
 	@Id
-	@Column
-	private static int id;
-	@Column
+	private int idThrow = 1;
 	private int playerId;
-	@Column
 	private int dice1;
-	@Column
 	private int dice2;
 
 	public static int tira() {
@@ -26,7 +20,7 @@ public class ThrowDices {
 
 	public ThrowDices(int playerId) {
 		this.playerId = playerId;
-		this.id = id;
+		this.idThrow = id;
 		id++;
 		dice1 = tira();
 		dice2 = tira();

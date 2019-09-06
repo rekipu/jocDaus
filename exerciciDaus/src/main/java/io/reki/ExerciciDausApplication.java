@@ -17,6 +17,8 @@ public class ExerciciDausApplication {
 		Scanner lee = new Scanner(System.in);
 		int select;
 		int playerId = 0;
+		
+		TiradasService tiradasService = new TiradasService();
 
 		do {
 			System.out.println("Benvingut al dad'o'matic!");
@@ -43,6 +45,7 @@ public class ExerciciDausApplication {
 					do {
 						neteja();
 						ThrowDices tirada = new ThrowDices(playerId);
+						tiradasService.addTirada(tirada);
 						System.out.println("Vols tornar a tirar? S/N");
 						resposta = lee.next();
 					} while (resposta.toUpperCase().equals("S"));
@@ -51,6 +54,7 @@ public class ExerciciDausApplication {
 			case 3:
 				neteja();
 				// TODO consultes
+				System.out.println(tiradasService.showThrows());
 				System.out.println("blablabla historial");
 				break;
 			default:

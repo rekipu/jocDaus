@@ -20,7 +20,14 @@ public class TiradasController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/players")
-	public void updatePlayer()
+	public void updatePlayer(Player player) {
+		tirServ.updatePlayer(player);
+	}
+	
+	@RequestMapping(method=RequestMethod.POST,value="/players/{id}/games/")
+	public void tiraDaus(Player player) {
+		//TODO implementar jugada a un jugador concret
+	}
 	
 	
 	

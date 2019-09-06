@@ -18,6 +18,7 @@ public class ThrowDices {
 		int x = (int) (Math.random() * ((6 - 1) + 1)) + 1;
 		return x;
 	}
+	
 
 	public ThrowDices(int playerId) {
 		this.playerId = playerId;
@@ -35,6 +36,7 @@ public class ThrowDices {
 			System.out.println("Machine wins! we will rule the world, loser!");
 			won=false;
 		}
+		
 		
 
 	}

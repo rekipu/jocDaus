@@ -33,6 +33,11 @@ public class TiradasService {
 		playRepo.findAll().forEach(jugadors::add);
 		return jugadors;
 	}
+
+	public void updatePlayer(Player player) {
+		playRepo.save(player);
+		
+	}
 	
 	
 

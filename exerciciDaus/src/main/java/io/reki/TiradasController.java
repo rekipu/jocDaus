@@ -20,7 +20,9 @@ public class TiradasController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/players")
-	public void updatePlayer()
+	public void updatePlayer(Player player) {
+		tirServ.updatePlayer(player);
+	}
 	
 	
 	

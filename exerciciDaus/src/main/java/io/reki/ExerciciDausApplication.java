@@ -45,6 +45,7 @@ public class ExerciciDausApplication {
 					do {
 						neteja();
 						ThrowDices tirada = new ThrowDices(playerId);
+						tirada.tiraDaus();
 						tiradasService.addTirada(tirada);
 						System.out.println("Vols tornar a tirar? S/N");
 						resposta = lee.next();

@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Mon Sep 09 09:32:25 CEST 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-14f0-24dc-000002d60a60 
-on database directory memory:E:\projectes\projectes java\exercici daus\exerciciDaus\testdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2626b418 
-Loaded from file:/C:/Users/reki6/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+Tue Sep 10 11:53:29 CEST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-1a97-a508-000005bee4e0 
+on database directory memory:C:\projectes\jocDaus\exerciciDaus\testdb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/reki/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=12.0.1+12
-user.dir=E:\projectes\projectes java\exercici daus\exerciciDaus
+java.runtime.version=1.8.0_221-b11
+user.dir=C:\projectes\jocDaus\exerciciDaus
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

@@ -20,7 +20,7 @@ public class ExerciciDausApplication {
 		int playerId = 0;
 		
 		
-		TiradasService tiradasService;
+		TiradasService tiradasService = new TiradasService();
 
 		do {
 			System.out.println("Benvingut al dad'o'matic!");

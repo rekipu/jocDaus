@@ -2,6 +2,7 @@ package io.reki;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -18,7 +19,8 @@ public class ExerciciDausApplication {
 		int select;
 		int playerId = 0;
 		
-		TiradasService tiradasService = new TiradasService();
+		
+		TiradasService tiradasService;
 
 		do {
 			System.out.println("Benvingut al dad'o'matic!");

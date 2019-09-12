@@ -24,21 +24,22 @@ public class ThrowDices {
 		this.playerId = playerId;
 		this.idThrow = id;
 		id++;
-		dice1 = tira();
-		dice2 = tira();
+		this.dice1 = tira();
+		this.dice2 = tira();	
+		
 
+	}
+	
+	public boolean tiraDaus() {
 		System.out.println("dau1: " + dice1 + " , dau2: " + dice2);
 		System.out.println("Total: " + (dice1 + dice2));
 		if (dice1 + dice2 == 7) {
 			System.out.println("Player wins!! Congratulations!!");
-			won=true;
+			return true;
 		} else {
 			System.out.println("Machine wins! we will rule the world, loser!");
-			won=false;
+			return false;
 		}
-		
-		
-
 	}
 
 }

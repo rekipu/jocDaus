@@ -2,6 +2,7 @@ package io.reki;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,6 +18,7 @@ public class ExerciciDausApplication {
 		Scanner lee = new Scanner(System.in);
 		int select;
 		int playerId = 0;
+		
 		
 		TiradasService tiradasService = new TiradasService();
 
@@ -45,6 +47,7 @@ public class ExerciciDausApplication {
 					do {
 						neteja();
 						ThrowDices tirada = new ThrowDices(playerId);
+						tirada.won = tirada.tiraDaus();
 						tiradasService.addTirada(tirada);
 						System.out.println("Vols tornar a tirar? S/N");
 						resposta = lee.next();

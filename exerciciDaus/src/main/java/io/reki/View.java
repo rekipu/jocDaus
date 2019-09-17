@@ -8,9 +8,10 @@ public class View {
 	public void neteja() {
 		for (int i = 0; i < 30; ++i) System.out.println();
 	}
-	@Autowired
-	TiradasService tiradasService;
+	//@Autowired
+	private TiradasService tiradasService;
 	
+	@Autowired
 	public View() {
 		probar();
 	}
@@ -34,6 +35,7 @@ public class View {
 				Player player = new Player(lee.next());
 				System.out.println("Benvingut, " + player.getPlayerName() + " , el teu id es: " + player.getId());
 				playerId = player.getId();
+				tiradasService.updatePlayer(player);
 				break;
 			case 2:
 				neteja();

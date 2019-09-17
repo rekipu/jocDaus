@@ -9,10 +9,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class TiradasService {
 
-	@Autowired
+	//@Autowired
 	private TiradasRepository tirRepo;
-	@Autowired
+	//@Autowired
 	private PlayerRepository playRepo;
+	
+	@Autowired
+	public TiradasService(TiradasRepository tirRepo, PlayerRepository playRepo) {
+		super();
+		this.tirRepo = tirRepo;
+		this.playRepo = playRepo;
+	}
 	
 	public void addTirada(ThrowDices tirada) {
 		tirRepo.save(tirada);
@@ -35,7 +42,7 @@ public class TiradasService {
 	}
 
 	public void updatePlayer(Player player) {
-		playRepo.save(player);
+		this.playRepo.save(player);
 		
 	}
 	

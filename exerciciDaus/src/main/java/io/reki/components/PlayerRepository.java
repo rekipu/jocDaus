@@ -1,4 +1,4 @@
-package io.reki;
+package io.reki.components;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

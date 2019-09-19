@@ -1,4 +1,4 @@
-package io.reki;
+package io.reki.components;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

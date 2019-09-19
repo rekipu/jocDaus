@@ -1,4 +1,4 @@
-package io.reki;
+package io.reki.components;
 
 import java.util.List;
 

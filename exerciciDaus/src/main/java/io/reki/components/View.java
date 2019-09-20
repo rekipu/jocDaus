@@ -14,14 +14,16 @@ public class View {
 	@Autowired
 	private TiradasService tiradasService;
 
+	@Autowired
 	public View() {
-		probar();
+		probar(tiradasService);
 	}
 
-	public void probar() {
+	public void probar(TiradasService tiradasService) {
 		Scanner lee = new Scanner(System.in);
 		int select;
 		int playerId = 0;
+		
 
 		do {
 			System.out.println("Benvingut al dad'o'matic!");
@@ -35,6 +37,7 @@ public class View {
 				neteja();
 				System.out.println("Escriu el nom de jugador, o deixa en blanc per logejar anonimament: ");
 				Player player = new Player(lee.next());
+				tiradasService.test();
 				System.out.println("Benvingut, " + player.getPlayerName() + " , el teu id es: " + player.getId()
 						+ ", i data:" + player.getRegisterDate());
 				tiradasService.updatePlayer(player);

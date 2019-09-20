@@ -30,6 +30,12 @@ public class Player {
 		this.registerDate = java.time.LocalDate.now();
 	}
 
+	public Player createPlayer(String name) {
+		Player player= new Player(name);
+		return player;
+		
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -40,6 +46,10 @@ public class Player {
 
 	public LocalDate getRegisterDate() {
 		return registerDate;
+	}
+	public void setName(String next) {
+		this.playerName = next;
+		
 	}
 
 	

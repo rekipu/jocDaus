@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TiradasService {
 
-	private final TiradasRepository tirRepo;
-	private final PlayerRepository playRepo;
+	private TiradasRepository tirRepo;
+	private PlayerRepository playRepo;
 	
 	@Autowired
 	public TiradasService(TiradasRepository tirRepo, PlayerRepository playRepo) {

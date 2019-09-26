@@ -3,6 +3,7 @@ package io.reki.components;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
 public class View {
@@ -20,6 +21,7 @@ public class View {
 	}
 
 	public void probar(TiradasService tiradasService) {
+		this.tiradasService=tiradasService;
 		Scanner lee = new Scanner(System.in);
 		int select;
 		int playerId = 0;

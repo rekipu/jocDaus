@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class TiradasService {
 
+	@Autowired
 	private TiradasRepository tirRepo;
+	@Autowired
 	private PlayerRepository playRepo;
 	
-	@Autowired
 	public TiradasService(TiradasRepository tirRepo, PlayerRepository playRepo) {
 		this.tirRepo = tirRepo;
 		this.playRepo = playRepo;

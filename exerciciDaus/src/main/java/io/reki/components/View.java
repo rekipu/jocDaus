@@ -3,10 +3,12 @@ package io.reki.components;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
-
-public class View {
+@Component
+public class View implements ApplicationListener<ApplicationReadyEvent>{
 	public void neteja() {
 		for (int i = 0; i < 30; ++i)
 			System.out.println();
@@ -17,7 +19,7 @@ public class View {
 
 	@Autowired
 	public View() {
-		probar(tiradasService);
+		//probar(tiradasService);
 	}
 
 	public void probar(TiradasService tiradasService) {
@@ -74,6 +76,12 @@ public class View {
 		} while (select == 1 || select == 2 || select == 3);
 
 		System.out.println("Bye bye, hasta otro ratito!");
+	}
+
+	@Override
+	public void onApplicationEvent(ApplicationReadyEvent event) {
+		probar(tiradasService);
+		return;
 	}
 
 }

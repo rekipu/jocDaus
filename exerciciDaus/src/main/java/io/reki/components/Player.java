@@ -2,15 +2,13 @@ package io.reki.components;
 
 import java.time.LocalDate;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class Player {
 	
-	private static int id = 1;
+	private static int id;
 	@Id
 	private int idPlayer;
 	private String playerName;
@@ -23,6 +21,7 @@ public class Player {
 		id++;
 		this.registerDate = java.time.LocalDate.now();
 	}
+	
 	public Player() {
 		this.playerName = "ANONIMOUS";
 		this.idPlayer = id;
@@ -37,15 +36,15 @@ public class Player {
 	}
 	
 	public int getId() {
-		return id;
+		return this.idPlayer;
 	}
 
 	public String getPlayerName() {
-		return playerName;
+		return this.playerName;
 	}
 
 	public LocalDate getRegisterDate() {
-		return registerDate;
+		return this.registerDate;
 	}
 	public void setName(String next) {
 		this.playerName = next;

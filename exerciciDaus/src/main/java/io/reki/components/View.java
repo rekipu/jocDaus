@@ -17,16 +17,11 @@ public class View implements ApplicationListener<ApplicationReadyEvent>{
 	@Autowired
 	private TiradasService tiradasService;
 
-	@Autowired
-	public View() {
-		//probar(tiradasService);
-	}
-
 	public void probar(TiradasService tiradasService) {
 		this.tiradasService=tiradasService;
 		Scanner lee = new Scanner(System.in);
 		int select;
-		int playerId = 0;
+		Player player = null;
 		
 
 		do {
@@ -40,22 +35,21 @@ public class View implements ApplicationListener<ApplicationReadyEvent>{
 			case 1:
 				neteja();
 				System.out.println("Escriu el nom de jugador, o deixa en blanc per logejar anonimament: ");
-				Player player = new Player(lee.next());
-				tiradasService.test();
+				player = new Player(lee.next());
 				System.out.println("Benvingut, " + player.getPlayerName() + " , el teu id es: " + player.getId()
 						+ ", i data:" + player.getRegisterDate());
 				tiradasService.updatePlayer(player);
 				break;
 			case 2:
 				neteja();
-				if (playerId == 0) {
+				if (player == null) {
 					System.out.println("Has d'estar logejat com a jugador per tirar daus");
 					break;
 				} else {
 					String resposta;
 					do {
 						neteja();
-						ThrowDices tirada = new ThrowDices(playerId);
+						ThrowDices tirada = new ThrowDices(player.getId());
 						tirada.won = tirada.tiraDaus();
 						tiradasService.addTirada(tirada);
 						System.out.println("Vols tornar a tirar? S/N");
@@ -66,8 +60,8 @@ public class View implements ApplicationListener<ApplicationReadyEvent>{
 			case 3:
 				neteja();
 				// TODO consultes
-				System.out.println(tiradasService.showThrows());
-				System.out.println("blablabla historial");
+				//System.out.println(tiradasService.showThrows());
+				System.out.println(tiradasService.getAllPlayers());
 				break;
 			default:
 				break;
@@ -77,7 +71,7 @@ public class View implements ApplicationListener<ApplicationReadyEvent>{
 
 		System.out.println("Bye bye, hasta otro ratito!");
 	}
-
+	//this part launches probar when all the program is setup and ready
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent event) {
 		probar(tiradasService);

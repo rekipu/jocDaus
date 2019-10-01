@@ -47,6 +47,20 @@ public class TiradasService {
 		playRepo.save(player);
 		
 	}
+
+	public void deletePlayer(Player player) {
+		playRepo.delete(player);
+	}
+
+	public void deleteTiradas(Player player) {
+		tirRepo.deleteByPlayerId(player.getId());
+	}
+
+	public List<ThrowDices> getTiradesByPlayerId(int id) {
+		List<ThrowDices> tirades = new ArrayList<>();
+		tirRepo.getByPlayerId(id).forEach(tirades::add);
+		return tirades;
+	}
 	
 	
 	

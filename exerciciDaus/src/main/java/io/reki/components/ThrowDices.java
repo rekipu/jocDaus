@@ -1,18 +1,44 @@
 package io.reki.components;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class ThrowDices {
 
-	private static int id=1;
-	@Id
-	private int idThrow = 1;
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int idThrow;
 	private int playerId;
 	private int dice1;
 	private int dice2;
 	boolean won;
+
+	public int getIdThrow() {
+		return idThrow;
+	}
+
+
+	public int getPlayerId() {
+		return playerId;
+	}
+
+
+	public int getDice1() {
+		return dice1;
+	}
+
+
+	public int getDice2() {
+		return dice2;
+	}
+
+
+	public boolean isWon() {
+		return won;
+	}
+
 
 	public static int tira() {
 		int x = (int) (Math.random() * ((6 - 1) + 1)) + 1;
@@ -22,8 +48,6 @@ public class ThrowDices {
 
 	public ThrowDices(int playerId) {
 		this.playerId = playerId;
-		this.idThrow = id;
-		id++;
 		this.dice1 = tira();
 		this.dice2 = tira();	
 		

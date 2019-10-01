@@ -10,4 +10,7 @@ public interface TiradasRepository extends CrudRepository <ThrowDices , Integer>
 
 	List<ThrowDices> findByPlayerId(int playerId);
 	List<ThrowDices> findByPlayerIdAndWonTrue(int playerId);
+	
+	void deleteByPlayerId(int id);
+	Iterable<ThrowDices> getByPlayerId(int id);
 }

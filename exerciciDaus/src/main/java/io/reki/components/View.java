@@ -50,7 +50,7 @@ public class View implements ApplicationListener<ApplicationReadyEvent>{
 					do {
 						neteja();
 						ThrowDices tirada = new ThrowDices(player.getId());
-						tirada.won = tirada.tiraDaus();
+						System.out.println(tirada);
 						tiradasService.addTirada(tirada);
 						System.out.println("Vols tornar a tirar? S/N");
 						resposta = lee.next();

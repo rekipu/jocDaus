@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TiradasRepository extends CrudRepository <ThrowDices , Integer>{
 
-	List<ThrowDices> findByPlayerId(int playerId);
-	List<ThrowDices> findByPlayerIdAndWonTrue(int playerId);
+	public List<ThrowDices> findByPlayerId(int playerId);
+	public List<ThrowDices> findByPlayerIdAndWonTrue(int playerId);
 	
-	void deleteByPlayerId(int id);
-	Iterable<ThrowDices> getByPlayerId(int id);
+	public void deleteByPlayerId(int id);
+	public Iterable<ThrowDices> getByPlayerId(int id);
 }
